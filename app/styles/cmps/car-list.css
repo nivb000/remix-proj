@@ -1,0 +1,16 @@
+.car-list{
+    gap: 20px;
+    flex-wrap: wrap;
+    & a{
+        cursor: pointer;
+        text-decoration: none;
+        & .car-preview{
+            background-color: lightcoral;
+            color: #000;
+            width: 100px;
+            height: 100px;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.car-page{
+    & h1{
+        margin: 1rem 0;
+    }
+    & .add-new-modal{
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        width: 500px;
+        height: 500px;
+        background-color: white;
+        border-radius: 30px;
+        padding: 3rem;
+        & form{
+            & input, & button{
+                margin: 1rem 0;
+            }
+        }
+    }
+}

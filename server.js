@@ -7,6 +7,7 @@ import { broadcastDevReady, installGlobals } from "@remix-run/node";
 import compression from "compression";
 import express from "express";
 import morgan from "morgan";
+import chokidar from "chokidar"
 import sourceMapSupport from "source-map-support";
 
 sourceMapSupport.install();
@@ -37,11 +38,17 @@ app.use(express.static("public", { maxAge: "1h" }));
 
 app.use(morgan("tiny"));
 
+const watcher = chokidar.watch(BUILD_PATH, {
+  ignoreInitial: true,
+  awaitWriteFinish: { stabilityThreshold: 200 },
+});
+
 app.all("*", async (...args) => {
   if (process.env.NODE_ENV === "development") {
-    const handler = await createDevRequestHandler(initialBuild);
+    const handler = await createDevRequestHandler(initialBuild, watcher);
     return handler(...args);
   }
+
 
   const handler = createRequestHandler({
     build: initialBuild,

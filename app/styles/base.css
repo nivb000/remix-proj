@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+.main-layout{
+    max-width: 95%;
+    margin: 0 auto;
+}
+body{
+    background-color: lightblue;
+}
+.flex {
+    display: flex;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.align-center {
+    align-items: center;
+}

@@ -1,0 +1,16 @@
+header{
+    background-color: lightcoral;
+    margin-block-end: 2rem;
+    padding: 0 2.3rem;
+    & nav{
+        margin: 1rem 0;
+        width: 15%;
+        & a {
+            text-decoration: none;
+            color: black;
+            &.active{
+                text-decoration: overline;
+            }
+        }
+    }
+}
